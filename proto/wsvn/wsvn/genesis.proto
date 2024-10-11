@@ -1,0 +1,17 @@
+syntax = "proto3";
+package wsvn.wsvn;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "wsvn/wsvn/params.proto";
+
+option go_package = "wsvn/x/wsvn/types";
+
+// GenesisState defines the wsvn module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
